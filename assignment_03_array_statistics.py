@@ -68,7 +68,6 @@ def get_min(numbers):
     return smallest
 
 
-# main part of the program
 how_many = int(input("How many numbers? "))
 
 if how_many <= 0:
