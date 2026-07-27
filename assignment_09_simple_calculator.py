@@ -66,5 +66,83 @@
 #
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
 
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        return None
+    return round(a / b, 2)
+
+
+def modulus(a, b):
+    if b == 0:
+        return None
+    return a % b
+
+
+def exponent(a, b):
+    return a ** b
+
+
+# main part of the program
+
+running = True
+
+while running:
+    print()
+    print("============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+    choice = input("Select an operation (1-7): ")
+
+    if choice == "7":
+        print("Goodbye!")
+        running = False
+    elif choice in ["1", "2", "3", "4", "5", "6"]:
+        num1 = float(input("Enter first number : "))
+        num2 = float(input("Enter second number: "))
+
+        if choice == "1":
+            result = add(num1, num2)
+            symbol = "+"
+        elif choice == "2":
+            result = subtract(num1, num2)
+            symbol = "-"
+        elif choice == "3":
+            result = multiply(num1, num2)
+            symbol = "*"
+        elif choice == "4":
+            result = divide(num1, num2)
+            symbol = "/"
+        elif choice == "5":
+            result = modulus(num1, num2)
+            symbol = "%"
+        elif choice == "6":
+            result = exponent(num1, num2)
+            symbol = "**"
+
+        if result is None:
+            print("Error: Cannot divide by zero.")
+        else:
+            print("Result: " + str(num1) + " " + symbol + " " + str(num2) + " = " + str(result))
+    else:
+        print("Error: Please enter a number between 1 and 7.")
